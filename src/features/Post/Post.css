@@ -1,0 +1,20 @@
+.post {
+  background: var(--color-foreground);
+  box-shadow: var(--box-shadow);
+  margin-bottom: var(--spacing-3);
+  border-radius: var(--radius);
+  padding: var(--spacing-3);
+}
+
+.post .post-details {
+  border-top: 1px solid var(--color-border);
+  padding-top: var(--spacing-1);
+  font-size: 0.75rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.post .post-details .author-username {
+  color: var(--color-branding);
+  font-weight: bold;
+}

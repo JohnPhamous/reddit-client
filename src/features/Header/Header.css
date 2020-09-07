@@ -1,0 +1,4 @@
+header p {
+  color: var(--color-branding);
+  font-weight: bold;
+}

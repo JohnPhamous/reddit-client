@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Post from '../Post/Post';
 
 const Home = () => {
   const [posts, setPosts] = useState([]);
@@ -16,14 +17,7 @@ const Home = () => {
   return (
     <>
       {posts.map((post) => (
-        <article key={post.data.id}>
-          <h3>{post.data.title}</h3>
-          <img src={post.data.thumbnail} alt="" />
-          <p>{post.data.author}</p>
-          <p>Comments: {post.data.num_comments}</p>
-          <p>{new Date(post.data.created).toDateString()}</p>
-          <p>Upvotes: {post.data.ups}</p>
-        </article>
+        <Post key={post.data.id} post={post} />
       ))}
     </>
   );
