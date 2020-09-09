@@ -1,4 +1,12 @@
 header p {
   color: var(--color-branding);
   font-weight: bold;
+  padding: var(--spacing-1) 0;
+  grid-column: 2/3;
+}
+
+header {
+  background: var(--color-foreground);
+  box-shadow: var(--box-shadow);
+  height: 64px;
 }

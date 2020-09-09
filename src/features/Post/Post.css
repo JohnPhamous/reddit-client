@@ -5,6 +5,7 @@
   border-radius: var(--radius);
   padding: var(--spacing-3);
   transition: box-shadow 0.1s ease-in;
+  display: flex;
 }
 
 .post:hover {
@@ -37,4 +38,22 @@
 
 .post .post-title {
   margin: 0;
+}
+
+.post .post-votes-container {
+  margin-right: var(--spacing-3);
+}
+
+.post .post-votes-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.post .post-votes-container .post-votes-action {
+  font-size: 1.5rem;
+}
+
+.post .post-votes-container .post-votes-value {
+  margin: var(--spacing-1) 0;
 }

@@ -10,9 +10,17 @@ body {
 #root {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: var(--spacing-2);
 }
 
-header,
 main {
   grid-column: 2/3;
+}
+
+header {
+  grid-column: 1/-1;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: var(--spacing-2);
+  align-content: center;
 }
