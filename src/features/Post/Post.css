@@ -1,9 +1,14 @@
 .post {
   background: var(--color-foreground);
   box-shadow: var(--box-shadow);
-  margin-bottom: var(--spacing-3);
+  margin-bottom: var(--spacing-4);
   border-radius: var(--radius);
   padding: var(--spacing-3);
+  transition: box-shadow 0.1s ease-in;
+}
+
+.post:hover {
+  box-shadow: var(--box-shadow-hover);
 }
 
 .post .post-details {
