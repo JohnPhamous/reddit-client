@@ -73,7 +73,7 @@ const Post = (props) => {
             Posted by <span className="author-username">{data.author}</span>
           </span>
           <span>{timeAgo(data.created)} ago</span>
-          <span>{data.num_comments}</span>
+          <span>{shortenNumber(data.num_comments, 1)}</span>
         </div>
       </div>
     </article>
