@@ -5,6 +5,7 @@ import {
   TiArrowUpThick,
   TiArrowDownOutline,
   TiArrowDownThick,
+  TiMessage,
 } from 'react-icons/ti';
 import moment from 'moment';
 import shortenNumber from '../../utils/shortenNumber';
@@ -30,16 +31,16 @@ const Post = (props) => {
 
   const renderUpVote = () => {
     if (voteValue === 1) {
-      return <TiArrowUpThick className="post-votes-action up-vote" />;
+      return <TiArrowUpThick className="icon-action" />;
     }
-    return <TiArrowUpOutline className="post-votes-action" />;
+    return <TiArrowUpOutline className="icon-action" />;
   };
 
   const renderDownVote = () => {
     if (voteValue === -1) {
-      return <TiArrowDownThick className="post-votes-action down-vote" />;
+      return <TiArrowDownThick className="icon-action" />;
     }
-    return <TiArrowDownOutline className="post-votes-action" />;
+    return <TiArrowDownOutline className="icon-action" />;
   };
 
   return (
@@ -47,7 +48,9 @@ const Post = (props) => {
       <div className="post-votes-container">
         <button
           type="button"
-          className="post-votes-button"
+          className={`icon-action-button up-vote ${
+            voteValue === 1 && 'active'
+          }`}
           onClick={() => onHandleVote(1)}
         >
           {renderUpVote()}
@@ -55,7 +58,9 @@ const Post = (props) => {
         <p className="post-votes-value">{shortenNumber(data.ups, 1)}</p>
         <button
           type="button"
-          className="post-votes-button"
+          className={`icon-action-button down-vote ${
+            voteValue === -1 && 'active'
+          }`}
           onClick={() => onHandleVote(-1)}
         >
           {renderDownVote()}
@@ -73,7 +78,12 @@ const Post = (props) => {
             Posted by <span className="author-username">{data.author}</span>
           </span>
           <span>{moment.unix(data.created_utc).fromNow()}</span>
-          <span>{shortenNumber(data.num_comments, 1)}</span>
+          <span className="post-comments-container">
+            <button type="button" className="icon-action-button" onClick={null}>
+              <TiMessage className="icon-action" />
+            </button>
+            {shortenNumber(data.num_comments, 1)}
+          </span>
         </div>
       </div>
     </article>
