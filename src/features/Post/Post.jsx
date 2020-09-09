@@ -6,7 +6,7 @@ import {
   TiArrowDownOutline,
   TiArrowDownThick,
 } from 'react-icons/ti';
-import timeAgo from '../../utils/timeAgo';
+import moment from 'moment';
 import shortenNumber from '../../utils/shortenNumber';
 
 const Post = (props) => {
@@ -72,7 +72,7 @@ const Post = (props) => {
           <span>
             Posted by <span className="author-username">{data.author}</span>
           </span>
-          <span>{timeAgo(data.created)} ago</span>
+          <span>{moment.unix(data.created_utc).fromNow()}</span>
           <span>{shortenNumber(data.num_comments, 1)}</span>
         </div>
       </div>
