@@ -17,17 +17,12 @@
   --spacing-4: 36px;
   --spacing-5: 64px;
 
-  --radius: 8px;
+  --radius: 4px;
+  --radius-2: 8px;
 }
 
 html,
 body {
   background: var(--color-background);
   color: var(--color-text-body);
-}
-
-main,
-header {
-  width: 80vw;
-  margin: 0 auto;
 }

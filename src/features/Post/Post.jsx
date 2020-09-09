@@ -8,8 +8,11 @@ const Post = (props) => {
 
   return (
     <article className="post" key={data.id}>
-      <img src={data.thumbnail} alt="" />
-      <h3>{data.title}</h3>
+      <h3 className="post-title">{data.title}</h3>
+
+      <div className="post-image-container">
+        <img src={data.url} alt="" className="post-image" />
+      </div>
 
       <p>Upvotes: {data.ups}</p>
       <div className="post-details">

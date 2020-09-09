@@ -23,3 +23,18 @@
   color: var(--color-branding);
   font-weight: bold;
 }
+
+.post .post-image-container {
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+  border-radius: var(--radius-2);
+}
+
+.post .post-image-container .post-image {
+  width: 100%;
+}
+
+.post .post-title {
+  margin: 0;
+}
