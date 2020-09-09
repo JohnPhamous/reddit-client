@@ -6,6 +6,7 @@
   padding: var(--spacing-3);
   transition: box-shadow 0.1s ease-in;
   display: flex;
+  color: var(--color-text-secondary);
 }
 
 .post:hover {
@@ -13,6 +14,7 @@
 }
 
 .post .post-details {
+  margin-top: var(--spacing-2);
   border-top: 1px solid var(--color-border);
   padding-top: var(--spacing-1);
   font-size: 0.75rem;
@@ -38,6 +40,8 @@
 
 .post .post-title {
   margin: 0;
+  margin-bottom: var(--spacing-2);
+  color: var(--color-text-header);
 }
 
 .post .post-votes-container {
@@ -56,4 +60,27 @@
 
 .post .post-votes-container .post-votes-value {
   margin: var(--spacing-1) 0;
+  font-weight: bold;
+}
+
+.post .post-votes-container .up-vote {
+  color: var(--color-success);
+}
+
+.post .post-votes-container .down-vote {
+  color: var(--color-alert);
+}
+
+.post .post-votes-container .post-votes-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--color-text-secondary);
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
+.post .post-votes-container .post-votes-button:hover {
+  background: var(--color-on-hover);
 }

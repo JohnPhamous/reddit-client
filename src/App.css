@@ -4,7 +4,12 @@
   --color-border: #e6e6e6;
   --color-text-header: #444444;
   --color-text-body: #6f6f6f;
+  --color-text-secondary: #aaaaaa;
   --color-branding: #3d5af1;
+
+  --color-alert: #ff304f;
+  --color-success: #45b81f;
+  --color-on-hover: #0000000f;
 
   --box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
     0 4px 6px -2px rgba(0, 0, 0, 0.05) !important;
