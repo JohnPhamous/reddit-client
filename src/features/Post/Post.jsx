@@ -7,6 +7,7 @@ import {
   TiArrowDownThick,
 } from 'react-icons/ti';
 import timeAgo from '../../utils/timeAgo';
+import shortenNumber from '../../utils/shortenNumber';
 
 const Post = (props) => {
   const [voteValue, setVoteValue] = useState(0);
@@ -51,7 +52,7 @@ const Post = (props) => {
         >
           {renderUpVote()}
         </button>
-        <p className="post-votes-value">{data.ups}</p>
+        <p className="post-votes-value">{shortenNumber(data.ups, 1)}</p>
         <button
           type="button"
           className="post-votes-button"
