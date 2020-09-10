@@ -13,5 +13,6 @@ module.exports = {
   rules: {
     'react/prop-types': 'off',
     'react/jsx-one-expression-per-line': 'off',
+    'no-param-reassign': 'off',
   },
 };
