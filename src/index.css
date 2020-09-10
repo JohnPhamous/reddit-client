@@ -24,3 +24,14 @@ header {
   grid-gap: var(--spacing-2);
   align-content: center;
 }
+
+@media only screen and (max-width: 600px) {
+  #root {
+    grid-template-columns: 1fr;
+  }
+
+  main {
+    grid-column: 1;
+    padding: 1rem;
+  }
+}
