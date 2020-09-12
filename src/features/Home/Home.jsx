@@ -18,10 +18,8 @@ const Home = () => {
   const posts = useSelector(selectFilteredPosts);
   const dispatch = useDispatch();
 
-  const getPosts = () => dispatch(fetchPosts(selectedSubreddit));
-
   useEffect(() => {
-    getPosts();
+    dispatch(fetchPosts(selectedSubreddit));
   }, [selectedSubreddit]);
 
   const onToggleComments = (index) => {
@@ -44,7 +42,10 @@ const Home = () => {
     return (
       <div className="error">
         <h2>Failed to load posts.</h2>
-        <button type="button" onClick={getPosts}>
+        <button
+          type="button"
+          onClick={() => dispatch(fetchPosts(selectedSubreddit))}
+        >
           Try again
         </button>
       </div>
