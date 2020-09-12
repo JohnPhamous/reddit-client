@@ -4,12 +4,13 @@ import { AnimatedList } from 'react-animated-list';
 import Post from '../Post/Post';
 import PostLoading from '../Post/PostLoading';
 import getRandomNumber from '../../utils/getRandomNumber';
-import { fetchPosts } from '../../store/redditSlice';
+import { fetchPosts, selectFilteredPosts } from '../../store/redditSlice';
 import './Home.css';
 
 const Home = () => {
   const reddit = useSelector((state) => state.reddit);
-  const { posts, isLoading, error } = reddit;
+  const { isLoading, error } = reddit;
+  const posts = useSelector(selectFilteredPosts);
   const dispatch = useDispatch();
 
   const getPosts = () => dispatch(fetchPosts('pics'));
@@ -40,7 +41,7 @@ const Home = () => {
   return (
     <>
       {posts.map((post) => (
-        <Post key={post.data.id} post={post} />
+        <Post key={post.id} post={post} />
       ))}
     </>
   );

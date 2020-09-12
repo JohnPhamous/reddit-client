@@ -14,7 +14,6 @@ const Post = (props) => {
   const [voteValue, setVoteValue] = useState(0);
 
   const { post } = props;
-  const { data } = post;
 
   /**
    * @param {number} newValue The new vote value
@@ -55,7 +54,7 @@ const Post = (props) => {
   };
 
   return (
-    <article className="post" key={data.id}>
+    <article className="post" key={post.id}>
       <div className="post-votes-container">
         <button
           type="button"
@@ -67,7 +66,7 @@ const Post = (props) => {
           {renderUpVote()}
         </button>
         <p className={`post-votes-value ${getVoteType()}`}>
-          {shortenNumber(data.ups, 1)}
+          {shortenNumber(post.ups, 1)}
         </p>
         <button
           type="button"
@@ -80,22 +79,22 @@ const Post = (props) => {
         </button>
       </div>
       <div className="post-container">
-        <h3 className="post-title">{data.title}</h3>
+        <h3 className="post-title">{post.title}</h3>
 
         <div className="post-image-container">
-          <img src={data.url} alt="" className="post-image" />
+          <img src={post.url} alt="" className="post-image" />
         </div>
 
         <div className="post-details">
           <span>
-            Posted by <span className="author-username">{data.author}</span>
+            Posted by <span className="author-username">{post.author}</span>
           </span>
-          <span>{moment.unix(data.created_utc).fromNow()}</span>
+          <span>{moment.unix(post.created_utc).fromNow()}</span>
           <span className="post-comments-container">
             <button type="button" className="icon-action-button" onClick={null}>
               <TiMessage className="icon-action" />
             </button>
-            {shortenNumber(data.num_comments, 1)}
+            {shortenNumber(post.num_comments, 1)}
           </span>
         </div>
       </div>

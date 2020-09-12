@@ -1,7 +1,7 @@
-header div {
+header .logo {
   font-weight: bold;
   padding: var(--spacing-1) 0;
-  grid-column: 2/3;
+  grid-column: 1/2;
   display: flex;
   align-items: center;
 }
@@ -11,6 +11,7 @@ header {
   background: var(--color-foreground);
   box-shadow: var(--box-shadow);
   height: 64px;
+  padding: 0 var(--spacing-5);
 }
 
 header svg {
@@ -21,4 +22,18 @@ header svg {
 
 header span {
   color: var(--color-text-header);
+}
+
+.search {
+  display: flex;
+  align-items: center;
+}
+
+.search input {
+  flex-grow: 1;
+  background: var(--color-background-secondary);
+  border: none;
+  padding: var(--spacing-1) var(--spacing-2);
+  height: max-content;
+  border-radius: var(--radius);
 }
