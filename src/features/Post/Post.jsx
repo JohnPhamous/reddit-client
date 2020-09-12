@@ -133,7 +133,9 @@ const Post = (props) => {
               <span className="post-comments-container">
                 <button
                   type="button"
-                  className="icon-action-button"
+                  className={`icon-action-button ${
+                    post.showingComments && 'showing-comments'
+                  }`}
                   onClick={() => onToggleComments(post.permalink)}
                 >
                   <TiMessage className="icon-action" />

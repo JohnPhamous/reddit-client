@@ -109,3 +109,7 @@
   display: flex;
   align-items: center;
 }
+
+.showing-comments {
+  color: var(--color-branding);
+}
