@@ -38,7 +38,7 @@ const Header = () => {
           value={searchTermLocal}
           onChange={onSearchTermChange}
         />
-        <button type="submit" onClick={onSearchTermSubmit}>
+        <button type="submit" onClick={onSearchTermSubmit} aria-label="Search">
           <HiOutlineSearch />
         </button>
       </form>

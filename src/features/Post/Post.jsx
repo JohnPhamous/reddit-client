@@ -101,6 +101,7 @@ const Post = (props) => {
                 voteValue === 1 && 'active'
               }`}
               onClick={() => onHandleVote(1)}
+              aria-label="Up vote"
             >
               {renderUpVote()}
             </button>
@@ -113,6 +114,7 @@ const Post = (props) => {
                 voteValue === -1 && 'active'
               }`}
               onClick={() => onHandleVote(-1)}
+              aria-label="Down vote"
             >
               {renderDownVote()}
             </button>
@@ -137,6 +139,7 @@ const Post = (props) => {
                     post.showingComments && 'showing-comments'
                   }`}
                   onClick={() => onToggleComments(post.permalink)}
+                  aria-label="Show comments"
                 >
                   <TiMessage className="icon-action" />
                 </button>

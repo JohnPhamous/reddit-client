@@ -13,11 +13,19 @@ const PostLoading = () => {
   return (
     <article className="post">
       <div className="post-votes-container">
-        <button type="button" className="icon-action-button up-vote">
+        <button
+          type="button"
+          className="icon-action-button up-vote"
+          aria-label="Up vote"
+        >
           <TiArrowUpOutline className="icon-action" />
         </button>
         <Skeleton className="post-votes-value post-votes-value-loading" />
-        <button type="button" className="icon-action-button down-vote">
+        <button
+          type="button"
+          className="icon-action-button down-vote"
+          aria-label="Down vote"
+        >
           <TiArrowDownOutline className="icon-action" />
         </button>
       </div>
@@ -38,7 +46,11 @@ const PostLoading = () => {
             <Skeleton width={getRandomNumber(50, 100)} />
           </span>
           <span className="post-comments-container">
-            <button type="button" className="icon-action-button">
+            <button
+              type="button"
+              className="icon-action-button"
+              aria-label="Show comments"
+            >
               <TiMessage className="icon-action" />
             </button>
             <Skeleton width={getRandomNumber(10, 50)} />
