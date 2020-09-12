@@ -1,3 +1,7 @@
+.post-wrapper {
+  display: flex;
+}
+
 .post-container {
   width: 100%;
 }

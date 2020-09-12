@@ -5,7 +5,6 @@
   border-radius: var(--radius);
   padding: var(--spacing-3);
   transition: box-shadow 0.1s ease-in;
-  display: flex;
   color: var(--color-text-secondary);
 }
 
