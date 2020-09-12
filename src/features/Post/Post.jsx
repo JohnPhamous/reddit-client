@@ -10,6 +10,7 @@ import {
 import moment from 'moment';
 import shortenNumber from '../../utils/shortenNumber';
 import Card from '../../components/Card/Card';
+import Avatar from '../Avatar/Avatar';
 
 const Post = (props) => {
   const [voteValue, setVoteValue] = useState(0);
@@ -90,11 +91,7 @@ const Post = (props) => {
 
             <div className="post-details">
               <span className="author-details">
-                <img
-                  src={`https://api.adorable.io/avatars/10/${post.author}`}
-                  alt={`${post.author} profile`}
-                  className="author-profile-image"
-                />
+                <Avatar name={post.author} />
                 <span className="author-username">{post.author}</span>
               </span>
               <span>{moment.unix(post.created_utc).fromNow()}</span>
