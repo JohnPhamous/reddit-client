@@ -17,6 +17,10 @@ main {
   grid-column: 2/3;
 }
 
+a {
+  color: var(--color-text-link);
+}
+
 header {
   grid-column: 1/-1;
   display: grid;
