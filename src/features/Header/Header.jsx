@@ -37,6 +37,7 @@ const Header = () => {
           placeholder="Search"
           value={searchTermLocal}
           onChange={onSearchTermChange}
+          aria-label="Search posts"
         />
         <button type="submit" onClick={onSearchTermSubmit} aria-label="Search">
           <HiOutlineSearch />
