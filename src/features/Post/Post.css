@@ -68,6 +68,14 @@
   font-weight: bold;
 }
 
+.post-votes-value.up-vote {
+  color: var(--color-success) !important;
+}
+
+.post-votes-value.down-vote {
+  color: var(--color-alert) !important;
+}
+
 .up-vote:hover {
   color: var(--color-success) !important;
 }

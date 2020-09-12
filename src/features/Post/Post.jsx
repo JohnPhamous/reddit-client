@@ -43,6 +43,17 @@ const Post = (props) => {
     return <TiArrowDownOutline className="icon-action" />;
   };
 
+  const getVoteType = () => {
+    if (voteValue === 1) {
+      return 'up-vote';
+    }
+    if (voteValue === -1) {
+      return 'down-vote';
+    }
+
+    return '';
+  };
+
   return (
     <article className="post" key={data.id}>
       <div className="post-votes-container">
@@ -55,7 +66,9 @@ const Post = (props) => {
         >
           {renderUpVote()}
         </button>
-        <p className="post-votes-value">{shortenNumber(data.ups, 1)}</p>
+        <p className={`post-votes-value ${getVoteType()}`}>
+          {shortenNumber(data.ups, 1)}
+        </p>
         <button
           type="button"
           className={`icon-action-button down-vote ${
