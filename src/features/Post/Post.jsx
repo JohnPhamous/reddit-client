@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Skeleton from 'react-loading-skeleton';
 import './Post.css';
 import {
   TiArrowUpOutline,
@@ -10,12 +11,13 @@ import {
 import moment from 'moment';
 import shortenNumber from '../../utils/shortenNumber';
 import Card from '../../components/Card/Card';
+import Comment from '../Comment/Comment';
 import Avatar from '../Avatar/Avatar';
 
 const Post = (props) => {
   const [voteValue, setVoteValue] = useState(0);
 
-  const { post } = props;
+  const { post, onToggleComments } = props;
 
   /**
    * @param {number} newValue The new vote value
@@ -53,6 +55,39 @@ const Post = (props) => {
     }
 
     return '';
+  };
+
+  const renderComments = () => {
+    if (post.errorComments) {
+      return (
+        <div>
+          <h3>Error loading comments</h3>
+        </div>
+      );
+    }
+
+    if (post.loadingComments) {
+      return (
+        <div>
+          <Skeleton />
+          <Skeleton />
+          <Skeleton />
+          <Skeleton />
+        </div>
+      );
+    }
+
+    if (post.showingComments) {
+      return (
+        <div>
+          {post.comments.map((comment) => (
+            <Comment comment={comment} key={comment.id} />
+          ))}
+        </div>
+      );
+    }
+
+    return null;
   };
 
   return (
@@ -99,13 +134,15 @@ const Post = (props) => {
                 <button
                   type="button"
                   className="icon-action-button"
-                  onClick={null}
+                  onClick={() => onToggleComments(post.permalink)}
                 >
                   <TiMessage className="icon-action" />
                 </button>
                 {shortenNumber(post.num_comments, 1)}
               </span>
             </div>
+
+            {renderComments()}
           </div>
         </div>
       </Card>

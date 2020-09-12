@@ -8,6 +8,7 @@ import {
   fetchPosts,
   selectFilteredPosts,
   setSearchTerm,
+  fetchComments,
 } from '../../store/redditSlice';
 import './Home.css';
 
@@ -22,6 +23,14 @@ const Home = () => {
   useEffect(() => {
     getPosts();
   }, [selectedSubreddit]);
+
+  const onToggleComments = (index) => {
+    const getComments = (permalink) => {
+      dispatch(fetchComments(index, permalink));
+    };
+
+    return getComments;
+  };
 
   if (isLoading) {
     return (
@@ -55,8 +64,12 @@ const Home = () => {
 
   return (
     <>
-      {posts.map((post) => (
-        <Post key={post.id} post={post} />
+      {posts.map((post, index) => (
+        <Post
+          key={post.id}
+          post={post}
+          onToggleComments={onToggleComments(index)}
+        />
       ))}
     </>
   );
