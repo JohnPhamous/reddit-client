@@ -1,16 +1,21 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Header.css';
 import { FaReddit } from 'react-icons/fa';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { setSearchTerm } from '../../store/redditSlice';
 
 const Header = () => {
   const [searchTermLocal, setSearchTermLocal] = useState('');
+  const searchTerm = useSelector((state) => state.reddit.searchTerm);
   const dispatch = useDispatch();
 
   const onSearchTermChange = (e) => {
     setSearchTermLocal(e.target.value);
   };
+
+  useEffect(() => {
+    setSearchTermLocal(searchTerm);
+  }, [searchTerm]);
 
   const onSearchTermSubmit = (e) => {
     e.preventDefault();
