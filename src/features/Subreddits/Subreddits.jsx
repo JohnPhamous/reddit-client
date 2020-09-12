@@ -15,7 +15,7 @@ const Subreddits = () => {
 
   useEffect(() => {
     dispatch(fetchSubreddits());
-  }, []);
+  }, [dispatch]);
 
   return (
     <Card className="subreddit-card">
