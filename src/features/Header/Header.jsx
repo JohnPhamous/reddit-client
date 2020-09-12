@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { HiOutlineSearch } from 'react-icons/hi';
 import './Header.css';
 import { FaReddit } from 'react-icons/fa';
 import { useDispatch, useSelector } from 'react-redux';
@@ -25,7 +26,7 @@ const Header = () => {
   return (
     <header>
       <div className="logo">
-        <FaReddit />
+        <FaReddit className="logo-icon" />
         <p>
           Reddit<span>Minimal</span>
         </p>
@@ -37,6 +38,9 @@ const Header = () => {
           value={searchTermLocal}
           onChange={onSearchTermChange}
         />
+        <button type="submit" onClick={onSearchTermSubmit}>
+          <HiOutlineSearch />
+        </button>
       </form>
     </header>
   );

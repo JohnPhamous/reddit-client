@@ -14,7 +14,7 @@ header {
   padding: 0 var(--spacing-5);
 }
 
-header svg {
+header .logo-icon {
   grid-column: 2/3;
   margin-right: var(--spacing-1);
   font-size: 2rem;
@@ -36,4 +36,12 @@ header span {
   padding: var(--spacing-1) var(--spacing-2);
   height: max-content;
   border-radius: var(--radius);
+}
+
+.search button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--color-text-secondary);
+  font-size: 1.5rem;
 }
