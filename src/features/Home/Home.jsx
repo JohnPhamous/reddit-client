@@ -5,14 +5,17 @@ import Post from '../Post/Post';
 import PostLoading from '../Post/PostLoading';
 import getRandomNumber from '../../utils/getRandomNumber';
 import { fetchPosts } from '../../store/redditSlice';
+import './Home.css';
 
 const Home = () => {
   const reddit = useSelector((state) => state.reddit);
   const { posts, isLoading, error } = reddit;
   const dispatch = useDispatch();
 
+  const getPosts = () => dispatch(fetchPosts('pics'));
+
   useEffect(() => {
-    dispatch(fetchPosts('pics'));
+    getPosts();
   }, []);
 
   if (isLoading) {
@@ -20,6 +23,17 @@ const Home = () => {
       <AnimatedList animation="zoom">
         {Array(getRandomNumber(3, 10)).fill(<PostLoading />)}
       </AnimatedList>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="error">
+        <h2>Failed to load posts.</h2>
+        <button type="button" onClick={getPosts}>
+          Try again
+        </button>
+      </div>
     );
   }
 
