@@ -89,8 +89,13 @@ const Post = (props) => {
             </div>
 
             <div className="post-details">
-              <span>
-                Posted by <span className="author-username">{post.author}</span>
+              <span className="author-details">
+                <img
+                  src={`https://api.adorable.io/avatars/10/${post.author}`}
+                  alt={`${post.author} profile`}
+                  className="author-profile-image"
+                />
+                <span className="author-username">{post.author}</span>
               </span>
               <span>{moment.unix(post.created_utc).fromNow()}</span>
               <span className="post-comments-container">
