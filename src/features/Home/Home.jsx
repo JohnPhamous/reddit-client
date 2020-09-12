@@ -13,15 +13,15 @@ import './Home.css';
 
 const Home = () => {
   const reddit = useSelector((state) => state.reddit);
-  const { isLoading, error, searchTerm } = reddit;
+  const { isLoading, error, searchTerm, selectedSubreddit } = reddit;
   const posts = useSelector(selectFilteredPosts);
   const dispatch = useDispatch();
 
-  const getPosts = () => dispatch(fetchPosts('pics'));
+  const getPosts = () => dispatch(fetchPosts(selectedSubreddit));
 
   useEffect(() => {
     getPosts();
-  }, []);
+  }, [selectedSubreddit]);
 
   if (isLoading) {
     return (

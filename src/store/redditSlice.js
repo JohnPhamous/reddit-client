@@ -6,6 +6,7 @@ const initialState = {
   error: false,
   isLoading: false,
   searchTerm: '',
+  selectedSubreddit: '/r/pics/',
 };
 
 const redditSlice = createSlice({
@@ -30,6 +31,9 @@ const redditSlice = createSlice({
     setSearchTerm(state, action) {
       state.searchTerm = action.payload;
     },
+    setSelectedSubreddit(state, action) {
+      state.selectedSubreddit = action.payload;
+    },
   },
 });
 
@@ -39,6 +43,7 @@ export const {
   getPostsSuccess,
   startGetPosts,
   setSearchTerm,
+  setSelectedSubreddit,
 } = redditSlice.actions;
 
 export default redditSlice.reducer;
@@ -56,6 +61,8 @@ export const fetchPosts = (subreddit) => async (dispatch) => {
 
 const selectPosts = (state) => state.reddit.posts;
 const selectSearchTerm = (state) => state.reddit.searchTerm;
+export const selectSelectedSubreddit = (state) =>
+  state.reddit.selectedSubreddit;
 
 export const selectFilteredPosts = createSelector(
   [selectPosts, selectSearchTerm],
